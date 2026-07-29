@@ -1,0 +1,6 @@
+work/
+*.wlf
+*.ucdb
+*.vstf
+transcript
+*.log
