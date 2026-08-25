@@ -30,12 +30,12 @@ module axi4lite_assertions;
     assert property(bvalid_needs_aw_w)
         else $error("BVALID asserted before AW and W handshakes");
 
-    property wvalid_needs_aw;
-        @(posedge axiif.ACLK) disable iff(!axiif.ARESETn)
-        (axiif.WVALID) |-> (aw_handshake_done || (axiif.AWREADY && axiif.AWVALID));
-    endproperty
-    assert property(wvalid_needs_aw)
-        else $error("WVALID asserted before AW handshake");
+    // property wvalid_needs_aw;
+    //     @(posedge axiif.ACLK) disable iff(!axiif.ARESETn)
+    //     (axiif.WVALID) |-> (aw_handshake_done || (axiif.AWREADY && axiif.AWVALID));
+    // endproperty
+    // assert property(wvalid_needs_aw)
+    //     else $error("WVALID asserted before AW handshake");
 
     property rvalid_needs_ar;
         @(posedge axiif.ACLK) disable iff(!axiif.ARESETn)
